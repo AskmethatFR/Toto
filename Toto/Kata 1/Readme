@@ -1,0 +1,27 @@
+# Introduction
+
+Sample projet to recreate redux
+
+I will add some kata to be able to reproduce it as TDD
+
+# KATA 1
+
+### Explanation 
+Create an App State that is able to have multiple Slice
+
+An app state is the global state of an application. Is main goal is to manage globally the application state
+The Slices are the user needed object.
+
+Example of a Slice
+
+CounterSlice{
+ int value
+}
+
+### Rules
+
+1 - The State can have 0-N Slices
+2 - A Slice can't be a primitive value
+3 - The State can't have the same slice twice
+4 - If the State does not contains a slice, it's return null
+5 - The State can return any slice based on is type
