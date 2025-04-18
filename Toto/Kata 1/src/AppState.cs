@@ -26,3 +26,7 @@ public record AppState
         return JsonSerializer.Deserialize<T>(JsonSerializer.Serialize(first))!;
     }
 }
+
+public interface ISlice
+{
+}

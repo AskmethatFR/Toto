@@ -1,4 +1,6 @@
-﻿namespace Redux.Kata;
+﻿using Toto.Kata_1.src;
+
+namespace Toto;
 
 /// <summary>
 ///
@@ -27,28 +29,26 @@ public class AppStateTests
         {
             Value = 40
         };
-        _sut.AddSlice(slice);
-
+        AddSlice(slice);
         Verify(slice);
     }
 
     [Fact]
     public void AppStateBeAbleToGetASlice2()
     {
-        var slice = new Slice2()
+        Slice2 slice = new Slice2()
         {
             Value = true,
             Texts = ["toto", "titi"]
         };
-        _sut.AddSlice(slice);
-
+        AddSlice(slice);
         Verify(slice);
     }
 
     [Fact]
     public void AppStateBeAbleToGetASlice3()
     {
-        var slice = new Slice3()
+        Slice3 slice = new Slice3()
         {
             Value = new Slice()
             {
@@ -56,18 +56,19 @@ public class AppStateTests
             },
             Texts = ["toto", "titi"]
         };
-        _sut.AddSlice(slice);
+        AddSlice(slice);
 
         Verify(slice);
     }
+
 
     [Fact]
     public void AppStateNotBeAbleToAddSliceTwice()
     {
         try
         {
-            var slice = new Slice();
-            _sut.AddSlice(slice, slice);
+            Slice slice = new Slice();
+            AddSlice(slice, slice);
 
             Verify(slice);
             Assert.Fail("Adding same slice multiple time is prohibited");
@@ -83,9 +84,9 @@ public class AppStateTests
     {
         try
         {
-            var slice = new Slice();
-            var slice2 = new Slice();
-            _sut.AddSlice(slice, slice2);
+            Slice slice = new Slice();
+            Slice slice2 = new Slice();
+            AddSlice(slice, slice2);
 
             Verify(slice);
             Assert.Fail("Adding same slice multiple time is prohibited");
@@ -99,9 +100,9 @@ public class AppStateTests
     [Fact]
     public void AppStateBeAbleToGetSecondSlice()
     {
-        var slice = new Slice();
-        var slice2 = new Slice2();
-        _sut.AddSlice(slice, slice2);
+        Slice slice = new Slice();
+        Slice2 slice2 = new Slice2();
+        AddSlice(slice, slice2);
 
         Verify(slice2);
     }
@@ -113,7 +114,7 @@ public class AppStateTests
         try
         {
             Slice slice = null!;
-            _sut.AddSlice(slice);
+            AddSlice(slice);
 
             Verify(slice);
             Assert.Fail("Adding null slice is prohibited");
@@ -127,15 +128,19 @@ public class AppStateTests
     [Fact]
     public void UnknownSlice()
     {
-        var slice = new Slice();
-        _sut.AddSlice(slice);
+        Slice slice = new Slice();
+        AddSlice(slice);
 
         Slice2? slice2 = null;
         Verify(slice2);
     }
 
+    private void AddSlice(params ISlice[] slice)
+    {
+        _sut.AddSlice(slice);
+    }
 
-    private void Verify<T>(T? slice) where T : class
+    private void Verify<T>(T? slice) where T : class, ISlice
     {
         T? actual = _sut.GetSlice<T>();
 
@@ -147,18 +152,18 @@ public class AppStateTests
     }
 }
 
-public record Slice
+public record Slice : ISlice
 {
     public int Value { get; init; }
 }
 
-public record Slice2
+public record Slice2: ISlice
 {
     public bool Value { get; init; }
     public List<string> Texts { get; init; }
 }
 
-public class Slice3
+public class Slice3: ISlice
 {
     public Slice Value { get; init; }
     public List<string> Texts { get; init; }
