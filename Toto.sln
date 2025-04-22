@@ -1,9 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toto", "Toto\Toto.csproj", "{DCAF18CE-19E8-4CF3-9FA9-062B496CDECC}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "final", "final", "{08D1E46E-B1E2-435E-B02F-DB1B938FF22A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redux.KataTests", "Redux.KataTests\Redux.KataTests.csproj", "{FC2B8753-1DFD-4E43-9E81-281CA9EAB751}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redux.Kata", "Redux.Kata\Redux.Kata.csproj", "{A903DB6B-A9DE-4B95-AAF7-33ED52AFF405}"
@@ -14,10 +10,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DCAF18CE-19E8-4CF3-9FA9-062B496CDECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCAF18CE-19E8-4CF3-9FA9-062B496CDECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DCAF18CE-19E8-4CF3-9FA9-062B496CDECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCAF18CE-19E8-4CF3-9FA9-062B496CDECC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC2B8753-1DFD-4E43-9E81-281CA9EAB751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FC2B8753-1DFD-4E43-9E81-281CA9EAB751}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC2B8753-1DFD-4E43-9E81-281CA9EAB751}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -28,7 +20,5 @@ Global
 		{A903DB6B-A9DE-4B95-AAF7-33ED52AFF405}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FC2B8753-1DFD-4E43-9E81-281CA9EAB751} = {08D1E46E-B1E2-435E-B02F-DB1B938FF22A}
-		{A903DB6B-A9DE-4B95-AAF7-33ED52AFF405} = {08D1E46E-B1E2-435E-B02F-DB1B938FF22A}
 	EndGlobalSection
 EndGlobal

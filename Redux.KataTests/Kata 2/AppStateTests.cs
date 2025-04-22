@@ -1,6 +1,4 @@
-﻿using Toto.Kata_1.src;
-
-namespace Toto;
+﻿namespace Redux.Kata.Kata_2;
 
 /// <summary>
 ///
@@ -20,7 +18,7 @@ namespace Toto;
 /// </summary>
 public class AppStateTests
 {
-    private readonly AppState _sut = new AppState();
+    private Store _sut;
 
     [Fact]
     public void AppStateBeAbleToGetASlice()
@@ -135,9 +133,9 @@ public class AppStateTests
         Verify(slice2);
     }
 
-    private void AddSlice(params ISlice[] slice)
+    private void AddSlice(params ISlice[] slices)
     {
-        _sut.AddSlice(slice);
+        _sut = Store.Init(slices);
     }
 
     private void Verify<T>(T? slice) where T : class, ISlice
@@ -157,13 +155,13 @@ public record Slice : ISlice
     public int Value { get; init; }
 }
 
-public record Slice2: ISlice
+public record Slice2 : ISlice
 {
     public bool Value { get; init; }
     public List<string> Texts { get; init; }
 }
 
-public class Slice3: ISlice
+public class Slice3 : ISlice
 {
     public Slice Value { get; init; }
     public List<string> Texts { get; init; }

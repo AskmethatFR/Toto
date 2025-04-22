@@ -1,0 +1,17 @@
+# Kata 2
+
+Modify the selected slice in state
+
+## Explanation
+
+Be able to modify the state.
+The modification of the state means replacing a slice with a new one if the data have changes
+
+modification of the state can't be done directly from AppState,
+introduce the store the access the state
+
+## Rules
+
+- Slice are immutable, should be replace
+- Modification return the new object
+- introduce the store to interact with the state

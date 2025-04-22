@@ -1,6 +1,4 @@
-﻿using Toto.Kata_1.src;
-
-namespace Toto;
+﻿namespace Redux.Kata.Kata_1;
 
 /// <summary>
 ///

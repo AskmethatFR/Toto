@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace Toto.Kata_1.src;
+namespace Redux.Kata.Kata_1;
 
 public record AppState
 {
@@ -25,8 +25,4 @@ public record AppState
     {
         return JsonSerializer.Deserialize<T>(JsonSerializer.Serialize(first))!;
     }
-}
-
-public interface ISlice
-{
 }
