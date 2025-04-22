@@ -1,0 +1,25 @@
+# Kata 3
+
+## Explanation
+
+Store can't manage from external point of view de update of a slice.
+All update should be done by an action with a payload.
+The action start the modification
+
+```cs
+record IncrementCounterAction(int numberOfIncrement)
+```
+
+The state modification is done by a reducer like this
+```cs
+class ReduceIncrementCounterAction(int numberOfIncrement) : IReducer{
+ public AppState Reduce(AppState state, IAction action){
+ }
+}
+```
+
+## Rules
+
+- Slice are immutable, should be replace
+- Modification return the new object
+- introduce the store to interact with the state
