@@ -1,0 +1,20 @@
+# Kata 3
+
+## Explanation
+
+Connect all together ! 
+The main goal of the state manager is to have only one entry point to collect & 
+modify the state data.
+
+the Dispatcher is the write part.
+
+It have the role to collect the actions, reduce them et update the corresponding 
+slice
+
+
+## Rules
+
+- Introduce the dispatcher
+- Dispatcher control if the action can be dispacth
+- Dispatcher call the reducer
+- Dispatcher update the AppState slices

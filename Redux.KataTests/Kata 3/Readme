@@ -20,6 +20,5 @@ class ReduceIncrementCounterAction(int numberOfIncrement) : IReducer{
 
 ## Rules
 
-- Slice are immutable, should be replace
-- Modification return the new object
-- introduce the store to interact with the state
+- Introduce action & reducer
+- Reducer must return the impacted slice

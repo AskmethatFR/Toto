@@ -1,6 +1,6 @@
 using Redux.Kata.Kata_3;
 
-namespace Redux.Kata.Kata_3;
+namespace Redux.Kata.Kata_4;
 
 public class ReducerTests
 {
